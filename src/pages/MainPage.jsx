@@ -102,7 +102,7 @@ function MainPage() {
                     id={index}
                     className={`${theme}-theme-component flag-box`}
                   >
-                    <div style={{ height: "250px" }}>
+                    <div style={{ height: "250px", width: "100%" }}>
                       <img src={country.flags.png} alt="flag" />
                     </div>
                     <div className="flag-box-text">
