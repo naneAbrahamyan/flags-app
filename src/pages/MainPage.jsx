@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useEffect } from "react";
+import React, { useContext, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeProvider";
 import { BsSearch } from "react-icons/bs";
@@ -9,7 +9,6 @@ const options = ["Africa", "America", "Asia", "Europe", "Oceania"];
 function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
-  console.log(value);
   const { countries } = useContext(DataContext);
   const { theme } = useContext(ThemeContext);
   const [timeoutId, setTimeoutId] = useState(null);
