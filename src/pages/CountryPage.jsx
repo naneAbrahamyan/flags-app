@@ -13,7 +13,9 @@ function CountryPage() {
   const { countries } = useContext(DataContext);
   const { theme } = useContext(ThemeContext);
   const [borders, setBorders] = useState([]);
-  const data = useAPI(`https://restcountries.com/v3.1/name/${country}`);
+  const { data, loading } = useAPI(
+    `https://restcountries.com/v3.1/name/${country}`
+  );
   const calcBorders = useCallback(() => {
     let border = {};
     const names = [];
@@ -32,7 +34,7 @@ function CountryPage() {
       className={`${theme}-theme country-container`}
       style={{ height: "100vh" }}
     >
-      {data === null ? (
+      {loading ? (
         <div>'Loading...'</div>
       ) : (
         <div>
