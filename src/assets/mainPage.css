@@ -1,0 +1,99 @@
+.flag-box{
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: 'center';
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+.flags-box{
+   display: grid;
+   grid-auto-rows: 1fr;
+   align-items: center;
+   padding: 0 2rem;
+   grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+   z-index: -1;
+}
+@media (min-width: 1100px){
+    .flags-box{
+        grid-template-columns: repeat(4, 1fr)
+     }
+
+}
+
+.search-input{
+    position: relative;
+    height: 50px;
+    margin-bottom: 20px ;
+}
+
+.search-icon{
+    position: absolute;
+    top: 17px;
+    left:7px;
+}
+.search-icon:focus{
+    border-color: 'none';
+    background: inherit;
+}
+
+.main-page-conatiner{
+    padding: 10px;
+}
+
+.dropDown-button {
+  width: 300px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+}
+.dropDown-button:hover{
+    background-color: grey;
+}
+
+
+@media (min-width: 600px){
+    .filters-conatiner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 600px){
+    .input-field{
+        width: 90%;
+    }
+    .dropDown-button {
+        width: 50%;
+      }
+    
+    .dropDown{
+        left: -40px;
+    }
+}
+
+.region-filter {
+    position: relative;
+}
+.dropDown{
+    position: absolute;
+    top: 50px;
+    right:0;
+    z-index:1;
+}
+
+.hide {
+    display: none;
+}

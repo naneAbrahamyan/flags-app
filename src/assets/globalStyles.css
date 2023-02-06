@@ -1,0 +1,38 @@
+:root {
+  --darkBlue: hsl(209, 23%, 22%);
+  --VeryDarkBlue: hsl(207, 26%, 17%);
+  --VeryDarkBlueLight: hsl(200, 15%, 8%);
+  --DarkGrey: hsl(0, 0%, 52%);
+  --LightGrey: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+.Light-theme {
+  background-color: var(--LightGrey);
+  color: var(--VeryDarkBlueLight);
+  font-size: 16px;
+  font-family: 'Nunito Sans';
+}
+
+.Light-theme-component {
+  background-color: var(--white);
+  color: var(--VeryDarkBlueLight);
+  font-size: 16px;
+  font-family: 'Nunito Sans';
+}
+.Dark-theme {
+  background: var(--VeryDarkBlue);
+  color: var(--white);
+  font-size: 16px;
+  font-family: 'Nunito Sans';
+}
+
+.Dark-theme-component {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  font-size: 16px;
+  font-family: 'Nunito Sans';
+}
+.bold {
+    font-size: 16px;
+    font-weight: 600;
+}
