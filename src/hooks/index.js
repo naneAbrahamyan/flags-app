@@ -19,5 +19,5 @@ export const useAPI = (url) => {
     fetchApi();
   }, [url]);
 
-  return { data , loading};
+  return { data , loading };
 };

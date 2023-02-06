@@ -1,4 +1,10 @@
-import React, { useContext, useState, useCallback } from "react";
+import React, {
+  useContext,
+  useState,
+  useCallback,
+  useRef,
+  useEffect,
+} from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeProvider";
 import { BsSearch } from "react-icons/bs";
@@ -12,6 +18,13 @@ function MainPage() {
   const { countries } = useContext(DataContext);
   const { theme } = useContext(ThemeContext);
   const [timeoutId, setTimeoutId] = useState(null);
+  const ref = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
   const handleInputChange = useCallback((event) => {
     clearTimeout(timeoutId);
 
@@ -21,12 +34,20 @@ function MainPage() {
 
     setTimeoutId(newTimeoutId);
   }, []);
+
   const handleFilterClick = (e) => {
     e.preventDefault();
     console.log("clicked");
     const value = isOpen;
     setIsOpen(!value);
   };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
 
   return (
     <div className={`${theme}-theme main-page-conatiner`}>
@@ -66,7 +87,7 @@ function MainPage() {
                 {" "}
                 Filter By Region
               </button>
-              <div className={`dropDown ${!isOpen && "hide"}`}>
+              <div ref={ref} className={`dropDown ${!isOpen && "hide"}`}>
                 <ul>
                   {options.map((region) => (
                     <li style={{ listStyleType: "none" }}>
